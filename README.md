@@ -14,3 +14,5 @@ PORT=8080 npm start
 It will expose 8080 locally via http://localhost:8080
 
 ## Test Container with AWS Credentails Locally
+
+## Test Container with IAM Role
