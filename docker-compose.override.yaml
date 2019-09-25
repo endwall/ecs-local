@@ -13,8 +13,10 @@ services:
     # This container vends credentials to your containers
     ecs-local-endpoints:
         # The Amazon ECS Local Container Endpoints Docker Image
-        build:
-          context: ./amazon-ecs-local-container-endpoints
+        # You can debug it via local build
+        #build:
+        #  context: ./amazon-ecs-local-container-endpoints
+        image: amazon/amazon-ecs-local-container-endpoints
         volumes:
           # Mount /var/run so we can access docker.sock and talk to Docker
           - /var/run:/var/run

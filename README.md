@@ -14,5 +14,15 @@ PORT=8080 npm start
 It will expose 8080 locally via http://localhost:8080
 
 ## Test Container with AWS Credentails Locally
-
+### Run locally
+```
+docker-compose up -d --build
+```
+### Test/Debug Locally
+To get source code of amazon-ecs-local-container-endpoints
+```
+./local_build.sh
+```
+* go to directory ```amazon-ecs-local-container-endpoints```, run ```make bin/linux-amd64/local-container-endpoints```.
+* in docker-compose.override.yaml, change image to build locally, run ```docker-compose up -d --build```
 ## Test Container with IAM Role

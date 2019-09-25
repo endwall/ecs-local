@@ -1,4 +1,0 @@
-[submodule "amazon-ecs-local-container-endpoints"]
-	path = amazon-ecs-local-container-endpoints
-	url = https://github.com/awslabs/amazon-ecs-local-container-endpoints
-	branch = master
