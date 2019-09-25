@@ -27,7 +27,7 @@ services:
           # define the home folder; credentials will be read from $HOME/.aws
           HOME: "/root"
           # You can change which AWS CLI Profile is used
-          AWS_PROFILE: "sandpit"
+          AWS_PROFILE: "default"
           LOG_LEVEL: "DEBUG"
         ports:
           - 8081:80
