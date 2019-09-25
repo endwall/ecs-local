@@ -28,13 +28,12 @@ services:
           HOME: "/root"
           # You can change which AWS CLI Profile is used
           AWS_PROFILE: "default"
+          ECS_LOCAL_METADATA_PORT: "51679"
           LOG_LEVEL: "DEBUG"
+        network_mode: container:local-pause
         ports:
           - 8081:80
-        networks:
-            credentials_network:
-                # This special IP address is recognized by the AWS SDKs and AWS CLI 
-                ipv4_address: "169.254.170.2"
+        network_mode: container:local-pause
                 
     # Here we reference the application container that we are testing
     # You can test multiple containers at a time, simply duplicate this section
@@ -42,12 +41,11 @@ services:
     app:
         depends_on:
             - ecs-local-endpoints
-        networks:
-            credentials_network:
-                ipv4_address: "169.254.170.3"
+        network_mode: container:local-pause
         environment:
           AWS_DEFAULT_REGION: "ap-southeast-2"
           AWS_CONTAINER_CREDENTIALS_RELATIVE_URI: "/creds"
           # Can be AWS_CONTAINER_CREDENTIALS_RELATIVE_URI: "/role/<name of your role>"
-          ECS_CONTAINER_METADATA_URI: "http://169.254.170.2/v3"
+          ECS_CONTAINER_METADATA_URI: "http://169.254.170.2/v3/containers/app"
+
 
