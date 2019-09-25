@@ -25,4 +25,5 @@ To get source code of amazon-ecs-local-container-endpoints
 ```
 * go to directory ```amazon-ecs-local-container-endpoints```, run ```make bin/linux-amd64/local-container-endpoints```.
 * in docker-compose.override.yaml, change image to build locally, run ```docker-compose up -d --build```
+* run ```curl http://localhost:8081/creds```, you shall see aws credentials from profile
 ## Test Container with IAM Role
